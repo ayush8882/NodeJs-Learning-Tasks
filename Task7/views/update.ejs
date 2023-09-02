@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Task 7</title>
+</head>
+<body>
+    <div class="container">
+    <form action="/update/<%= cc._id %>" method="post">
+        <h1>Update Form</h1>
+        <label for="name">Name: 
+        <input type="text" name="name" class="input" value = "<%= cc.name %>"  required></label>
+        <br><br>
+        <label for="uname">Email: 
+        <input type="email" name="email" class="input" value = "<%= cc.email %>"  required></label>
+        <br><br>
+        <label for="ucontact">Contact:
+        <input type="number" name="contact" maxlength="10" minlength="10" class="input" value = "<%= cc.contact %>"  required> </label>
+        <br><br>
+        <label for="uaddress">Address: 
+        <input type="text" name="address" class="input" value = "<%= cc.address %>"  required></label>
+        <br><br>
+        <button type="submit">Update</button>
+    </form>
+</div>
+</body>
+</html>

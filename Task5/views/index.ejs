@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5</title>
+</head>
+<body>
+    <form action="/add" method="post">
+        <h1>Registration Form</h1>
+        <label for="uname">User Name: </label>
+        <input type="text" name="uname">
+        <br><br>
+        <label for="uname">User Email: </label>
+        <input type="text" name="uemail">
+        <br><br>
+        <label for="ucontact">Contact Number: </label>
+        <input type="number" name="ucontact" maxlength="10" minlength="10">
+        <br><br>
+        <label for="uaddress">User Address: </label>
+        <textarea name="uaddress" ></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <% if(msg){ %> 
+        <h4>Data added successfully!</h4>
+    <% } %> 
+</body>
+</html>

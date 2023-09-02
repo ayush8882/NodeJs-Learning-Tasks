@@ -1,0 +1,32 @@
+ul{
+    list-style-type: none;
+    margin-left:-40px;
+}
+#err{
+    color: rgb(248, 113, 113);
+    background-color: rgb(248, 203, 203);
+    width: 96%;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 2;
+    font-size: .83em;
+}
+h3{
+    background-color: rgb(44, 124, 168);
+    padding: 10px;
+    color: white;
+}
+
+.name, .email{
+    width: 97.5%; 
+    padding: 5px;
+}
+
+button{
+    background-color:rgb(44, 124, 168);
+    padding: 9px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}

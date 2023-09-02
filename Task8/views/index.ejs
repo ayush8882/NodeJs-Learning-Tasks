@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TODO</title>
+	<link rel="stylesheet" href="./css/style.css">
+	
+</head>
+
+<body>
+	<section class="todoapp">
+		<header class="header">
+			<h1>todos</h1>
+			<form action="/add" method="POST">
+				<input class="new-todo" type="text" name="todo" placeholder="What needs to be done?" autofocus>
+			</form>
+
+		</header>
+		<section class="main">
+			<input id="toggle-all" class="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+			<ul class="todo-list">
+				<% todo.forEach(todos => { %>
+				<li>
+					<div class="view">
+						<% if(todos.status){ %>
+						<input class="toggle" type="checkbox"
+							onchange="window.location.href='/ucomplete/<%= todos._id %>'" checked>
+						<label><strike><%= todos.task %></strike> </label>
+						<a href="/del/<%= todos._id %> " class="destroy"></a>
+						<% } else { %>
+						<input class="toggle" type="checkbox"
+							onchange="window.location.href='/complete/<%= todos._id %>' ">
+						<label>
+							<%= todos.task %>
+						</label>
+
+						<a href="/del/<%= todos._id %> " class="destroy"></a>
+						<% } %>
+					</div>
+				</li>
+
+				<% }) %>
+			</ul>
+		</section>
+		<footer class="footer">
+			<span class="todo-count">
+				<strong>
+					<%= todo.length %>
+				</strong>
+				Task's
+			</span> 
+
+			<% if(todo.length >0){ %>
+			<ul class="filters">
+				<li>
+					<a href="/all">All</a>
+				</li>
+				<li>
+					<a href="/active">Active</a>
+				</li>
+				<li>
+					<a href="/completed">Completed</a>
+				</li>
+			</ul>
+			<% } else { %>
+			<ul class="filters">
+				<li>
+					<a href="/all">All</a>
+				</li>
+				<li>
+					<a href="/active">Active</a>
+				</li>
+				<li>
+					<a href="/completed">Completed</a>
+				</li>
+			</ul>
+			<% } %>
+
+		</footer>
+	</section>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Task 6</title>
+</head>
+<body>
+    <div class="container">
+    <form action="/add" method="post">
+        <h1>Registration Form</h1>
+        <label for="uname">Name: 
+        <input type="text" name="uname" class="input" required></label>
+        <br><br>
+        <label for="uname">Email: 
+        <input type="email" name="uemail" class="input" required></label>
+        <br><br>
+        <label for="ucontact">Contact:
+        <input type="number" name="ucontact" maxlength="10" minlength="10" class="input" required> </label>
+        <br><br>
+        <label for="uaddress">Address: 
+        <input type="text" name="uaddress" class="input" required></label>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="container2">
+    <h3>User info are :</h3>
+    <table class="styled-table">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+        <% cc.forEach((e) => { %>
+            <tr>
+                    <td><%= e.name %></td>
+                    <td><%= e.email %></td>
+                    <td><%= e.contact %></td>
+                    <td><%= e.address %></td>
+            </tr>
+            <% }) %>
+    </table>
+</div>
+</body>
+</html>
